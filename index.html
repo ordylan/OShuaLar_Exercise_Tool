@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="1.css">
+<link rel="manifest" href="manifest.json">
+<title>O刷_首字母填空 [公版]</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="theme-color" content="#E6E6E6">
+<!--<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon">
+<link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon">-->
+<script src="load.js"></script>
+<script src="DOIndexedDB.js"></script>
+</head>
+<body>
+<div id="mmm">
+<header><a href="/"><img src="https://on.ordylan.cn/back.png" id="b" alt="back"></a><h1 id="oes">O刷_首字母填空</h1></header>
+<div id="main" style="display: block;">
+<p id="mainn">你好呀, 欢迎来到[首字母填空]专场! 现有习题0道, 你已经完成0道, 真棒!(题目过多正在加载中...)</p>
+<a href="javascript:void(0);" onclick="document.getElementById('lists').style.display='block';">[马上O刷!]</a><br>
+<a href="javascript:void(0);" onclick="getanswer();">[修复题库]</a><br>
+<a href="javascript:void(0);" onclick="document.getElementById('DoDB').style.display='block';document.getElementById('main').style.display='none';">[存档操作(测试)]</a><br>
+
+</div>
+
+<div id="loadingq" style="display: none;"><p id="ldld">正在升级题库, 请稍等! [ 0 % ] </p></div>
+
+<div id="lists" style="display: none;">
+<header><a href="javascript:void(0);" onclick="document.getElementById('lists').style.display='none';back();"><img src="https://on.ordylan.cn/back.png" id="b" alt="back"></a><h1 id="oes">O刷_首字母填空</h1></header>
+
+<div id="qlistsa">    题目加载中</div>
+
+</div>
+
+<div id="startshua" style="display: none;">
+<header><a href="javascript:void(0);" onclick="document.getElementById('lists').style.display='block';document.getElementById('startshua').style.display='none';back();glistt();"><img src="https://on.ordylan.cn/back.png" id="b" alt="back"></a><h1 id="oes1">O刷中_首字母填空 <p id="timera">[0秒]</p><a href="javascript:void(0);" onclick="finishshua();">[提交]</a></h1></header>
+<div id="thisqaa">
+    
+<div id="qall"></div>
+<div id="answerplace"></div>
+
+<div id="error" style="display: none;">该题目答案排版问题, 系统无法解析! 请手动对答案!<br><a href="javascript:void(0);" onclick="document.getElementById('error').style.display='none';">[好的]</a></div>
+</div>
+</div>
+
+<div id="endshua" style="display: none;">
+<header><a href="javascript:void(0);" onclick="document.getElementById('lists').style.display='block';document.getElementById('endshua').style.display='none';back();glistt();"><img src="https://on.ordylan.cn/back.png" id="b" alt="back"></a><h1 id="oes">O刷完成!_首字母填空</h1></header>
+
+<div id="qlistsa2"><h1 id="lddd" style="display: none;">数据查询中...</h1><div id="hhaha"></div><hr>
+<div id="qall2">[原文]</div><hr>
+
+<div id="myanswer">[我的答案] : </div><hr>
+<div id="rightanswer">[正确答案] : </div><hr>
+<div id="jiexi"></div>
+</div></div>
+
+<div id="DoDB" style="display: none;">
+<header><a href="javascript:void(0);" onclick="document.getElementById('main').style.display='block';document.getElementById('DoDB').style.display='none';"><img src="https://on.ordylan.cn/back.png" id="b" alt="back"></a><h1 id="oes">O刷_存档管理</h1></header>
+<div id="dbdb"> 
+输入|输出的存档码: <br><a href="javascript:void(0);" onclick="document.getElementById('codeeee').value='';">[清空框]</a>
+<textarea id="codeeee"></textarea><br>
+<a href="javascript:void(0);" onclick="out();">[导出存档(上面框出现的字是导出的存档)]</a><br><br>
+<a href="javascript:void(0);" onclick="ina();">[导入存档(将覆盖原有存档)]</a><br><br>
+<a href="javascript:void(0);" onclick="empty();">[清空存档(大概率不可以恢复哦)]</a><br><br>
+
+</div>
+</div>
+</div>
+
+
+<script src="main.js"></script>
+</body>
+</html>

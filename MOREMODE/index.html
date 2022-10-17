@@ -1,35 +1,36 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="1.css">
+<link rel="stylesheet" type="text/css" href="../1.css">
 <link rel="manifest" href="manifest.json">
-<title>O刷_首字母填空 [公版]</title>
+<title>O刷_首字母填空 [额外]</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="theme-color" content="#E6E6E6">
 <!--<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon">
 <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon">-->
+<script src="../DOIndexedDB.js"></script>
 <script src="load.js"></script>
-<script src="DOIndexedDB.js"></script>
 </head>
 <body><style>#forkongithub a{z-index:20;background:#ffa600;color:	 #00BFFF;text-decoration:none;font-family:arial,sans-serif;text-align:center;font-weight:bold;padding:5px 40px;font-size:1rem;line-height:2rem;position:relative;transition:0.5s;}#forkongithub a:hover{background:#66CCFF;color:#ffa600;}#forkongithub a::before,#forkongithub a::after{content:"";width:100%;display:block;position:absolute;top:1px;left:0;height:1px;background:#000;}#forkongithub a::after{bottom:1px;top:auto;}@media screen and (min-width:800px){#forkongithub{position:absolute;display:block;top:0;right:0;width:200px;overflow:hidden;height:200px;z-index:9999;}#forkongithub a{width:200px;position:absolute;top:60px;right:-60px;transform:rotate(45deg);-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);-moz-transform:rotate(45deg);-o-transform:rotate(45deg);box-shadow:4px 4px 10px rgba(0,0,0,0.8);}}</style><span id="forkongithub"><a href="https://github.com/ordylan/OShuaLar_Exercise_Tool" target="_blank">Fork me on GitHub!</a></span>
 
 <div id="mmm">
-<header><a href="/"><img src="https://on.ordylan.cn/back.png" id="b" alt="back"></a><h1 id="oes">O刷_首字母填空</h1></header>
+<header><a href="/"><img src="https://on.ordylan.cn/back.png" id="b" alt="back"></a><h1 id="oes">O刷_首字母填空 [额外]</h1></header>
 <div id="main" style="display: block;">
-<p id="mainn">你好呀, 欢迎来到[首字母填空]专场! 现有习题0道, 你已经完成0道, 真棒!(题目过多正在加载中...)</p>
+<p id="mainn">你好呀, 欢迎来到[首字母填空]专场! 现有习题0道, 你已经完成0道, 真棒!</p>
 <a href="javascript:void(0);" onclick="document.getElementById('lists').style.display='block';">[马上O刷!]</a><br>
 <a href="javascript:void(0);" onclick="getanswer();">[修复题库]</a><br>
-<a href="javascript:void(0);" onclick="document.getElementById('DoDB').style.display='block';document.getElementById('main').style.display='none';">[存档操作(测试)]</a><br>
-<a href="MOREMODE/">[额外600题(有重)]</a>
+<a href="javascript:void(0);" onclick="document.getElementById('DoDB').style.display='block';document.getElementById('main').style.display='none';">[存档操作]</a><br>
+<a href="../">[返回旧版273题]</a><br>
+
+
 </div>
 
 <div id="loadingq" style="display: none;"><p id="ldld">正在升级题库, 请稍等! [ 0 % ] </p></div>
 
 <div id="lists" style="display: none;">
-<header><a href="javascript:void(0);" onclick="document.getElementById('lists').style.display='none';back();"><img src="https://on.ordylan.cn/back.png" id="b" alt="back"></a><h1 id="oes">O刷_首字母填空</h1></header>
+<header><a href="javascript:void(0);" onclick="document.getElementById('lists').style.display='none';back();"><img src="https://on.ordylan.cn/back.png" id="b" alt="back"></a><h1 id="oes">O刷_首字母填空 [额外]</h1></header>
 
-<div id="qlistsa">    题目加载中</div>
+<div id="qlistsa">题目加载中</div>
 
 </div>
 
@@ -64,11 +65,12 @@
 <a href="javascript:void(0);" onclick="ina();">[导入存档(将覆盖原有存档)]</a><br><br>
 <a href="javascript:void(0);" onclick="empty();">[清空存档(大概率不可以恢复哦)]</a><br><br>
 
+
 </div>
 </div>
 </div>
 
 
-<script src="main.js"></script>
+<script src="mainbackkkup.js"></script>
 </body>
 </html>

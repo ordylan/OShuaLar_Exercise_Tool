@@ -41,7 +41,7 @@ for (var i = 0; i < consolea.length; i++) {
 }
 console.log(consoleb);
 //updatedomain
-var domainaaa3 = "oshua.on.ordylan.cn";
+var domainaaa3 = "ordylan.github.io";
 var domainabb2 = "on.ordylan.cn";
 var domainacc1 = "ordylan.cn";
 if(window.location.hostname == domainacc1){

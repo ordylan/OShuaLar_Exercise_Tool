@@ -41,8 +41,7 @@ for (var i = 0; i < consolea.length; i++) {
 }
 console.log(consoleb);
 //updatedomain
-//var domainaaa3 = "oshua.on.ordylan.cn";
-var domainaaa3 = "ordylan.github.io";
+var domainaaa3 = "oshua.on.ordylan.cn";
 var domainabb2 = "on.ordylan.cn";
 var domainacc1 = "ordylan.cn";
 if(window.location.hostname == domainacc1){
@@ -283,7 +282,7 @@ window.resultaa = undefined;window.finnishaa = "";
 })(i)
 
 }
-setTimeout("document.getElementById(\"qlistsa\").innerHTML = window.aaa;document.getElementById(\"mainn\").innerHTML = \"你好呀, 欢迎来到[首字母填空专场]! 现有习题\"+qlist.length+\"道, 你已经完成了\"+alltimuwancheng+\"道, 真棒!<br>测试进行中, 部分习题答案批改错误, 欢迎反馈!存档等功能已上线!<br>>现在看上去非常不爽因为还没有仔细写css,未来会写的啊<<br>\";", 500);
+setTimeout("document.getElementById(\"qlistsa\").innerHTML = window.aaa;document.getElementById(\"mainn\").innerHTML = \"你好呀, 欢迎来到[首字母填空]专场! 现有习题\"+qlist.length+\"道, 你已经完成了\"+alltimuwancheng+\"道, 真棒!<br>存档等功能已上线! 2022.12.20更新: 优化批改逻辑,小幅度减少了习题答案批改错误的问题, 如有其他问题, 欢迎反馈! <br>>看上去非常不爽因为还没有仔细写css,未来会写的啊<<br>\";", 500);
 
 }
 setTimeout("glistt();", 1000);
@@ -365,14 +364,20 @@ var myyyyanswer = "";
 var input_array = document.getElementsByName("SSSSS");
 var rightaaa = "0";
 for(i=0;i<howmanyanswer.length;i++){
-    if(input_array[i].value == howmanyanswer[i]){
+    if(input_array[i].value == howmanyanswer[i].replace(/[^0-9a-zA-Z]/g, '')){
+        document.getElementById('myanswer').innerHTML = document.getElementById('myanswer').innerHTML+""+(i+1)+": " + input_array[i].value+"[正确], ";rightaaa = Number(rightaaa) + 1;var tttaaa = 1;
+    }
+    else if(input_array[i].value.slice(1) == howmanyanswer[i].replace(/[^0-9a-zA-Z]/g, '')){
         document.getElementById('myanswer').innerHTML = document.getElementById('myanswer').innerHTML+""+(i+1)+": " + input_array[i].value+"[正确], ";rightaaa = Number(rightaaa) + 1;var tttaaa = 1;
     }
     else{
         if(howmanyanswer[i].indexOf("{<|D|>}") != -1){
             var howmanyansweraa = howmanyanswer[i].split('{<|D|>}');
             for (j = 0; j < howmanyansweraa.length; j++) {
-                if(howmanyansweraa[j] == input_array[i].value){
+                if(howmanyansweraa[j].replace(/[^0-9a-zA-Z]/g, '') == input_array[i].value){
+                    document.getElementById('myanswer').innerHTML = document.getElementById('myanswer').innerHTML+""+(i+1)+": " + input_array[i].value+"[正确], ";rightaaa = Number(rightaaa) + 1;var tttaaa = 1;
+                }
+                else if(howmanyansweraa[j].replace(/[^0-9a-zA-Z]/g, '') == input_array[i].value.slice(1)){
                     document.getElementById('myanswer').innerHTML = document.getElementById('myanswer').innerHTML+""+(i+1)+": " + input_array[i].value+"[正确], ";rightaaa = Number(rightaaa) + 1;var tttaaa = 1;
                 }
                 else{
@@ -447,14 +452,20 @@ var myyyyanswer = "";
 var input_array = qqqthis.myanswer.split('{<|A|>}');
 var rightaaa = "0";
 for(i=0;i<howmanyanswer.length;i++){
-    if(input_array[i] == howmanyanswer[i]){
+    if(input_array[i] == howmanyanswer[i].replace(/[^0-9a-zA-Z]/g, '')){
+        document.getElementById('myanswer').innerHTML = document.getElementById('myanswer').innerHTML+""+(i+1)+": " + input_array[i]+"[正确], ";rightaaa = Number(rightaaa) + 1;var tttaaa = 1;
+    }
+    else if(input_array[i].slice(1) == howmanyanswer[i].replace(/[^0-9a-zA-Z]/g, '')){
         document.getElementById('myanswer').innerHTML = document.getElementById('myanswer').innerHTML+""+(i+1)+": " + input_array[i]+"[正确], ";rightaaa = Number(rightaaa) + 1;var tttaaa = 1;
     }
     else{
         if(howmanyanswer[i].indexOf("{<|D|>}") != -1){
             var howmanyansweraa = howmanyanswer[i].split('{<|D|>}');
             for (j = 0; j < howmanyansweraa.length; j++) {
-                if(howmanyansweraa[j] == input_array[i]){
+                if(howmanyansweraa[j].replace(/[^0-9a-zA-Z]/g, '') == input_array[i]){
+                    document.getElementById('myanswer').innerHTML = document.getElementById('myanswer').innerHTML+""+(i+1)+": " + input_array[i]+"[正确], ";rightaaa = Number(rightaaa) + 1;var tttaaa = 1;
+                }
+                else if(howmanyansweraa[j].replace(/[^0-9a-zA-Z]/g, '') == input_array[i].slice(1)){
                     document.getElementById('myanswer').innerHTML = document.getElementById('myanswer').innerHTML+""+(i+1)+": " + input_array[i]+"[正确], ";rightaaa = Number(rightaaa) + 1;var tttaaa = 1;
                 }
                 else{

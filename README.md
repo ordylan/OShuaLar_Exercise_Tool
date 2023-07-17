@@ -1,3 +1,6 @@
+# 新更新 
+刚才做了个英语词汇量测试网页版, 花了十几小时。见 ``wordstest.html`` .    
+
 # OShuaLar Exercise Tool (english)
 You can do exercise online(offline, with service worker)!<br>
 Here to try : https://ordylan.github.io/OShuaLar_Exercise_Tool/

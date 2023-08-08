@@ -1,0 +1,181 @@
+
+<title>因式分解在线对战</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML-full"></script>
+<div id="timu">`3x^2+25x+28`</div>
+<div id="k1" style="display:none;"></div>
+<div id="k2" style="display:none;"></div>
+<div id="k3" style="display:none;"></div>
+<div id="k4" style="display:none;"></div>
+<div id="answer">`(`<input type="number" id="a1" style="width:60px;">`x+`<input type="number" id="a2" style="width:60px;">`)(`<input type="number" id="a3" style="width:60px;">`x+`<input type="number" id="a4" style="width:60px;">`)`</div> 
+
+<a href="javascript:void(0);" onclick="submit();" id="aa1">[提交答案]</a>
+<a href="javascript:void(0);" onclick="window.location.reload();" id="aa2" style="display:none;">[下一题]</a>
+<br>
+<div id="scorepanel">我的得分:;对手得分:;对手正在思考中......!对手答[对]了!</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<a href="/YSFJ.html?difficulty=0">难度-[新手]</a>
+<a href="/YSFJ.html?difficulty=1">难度-[新手2]</a>
+<a href="/YSFJ.html?difficulty=2">难度-[正常]</a>
+<a href="/YSFJ.html?difficulty=3">难度-[难手]</a>
+<a href="/YSFJ.html?difficulty=4">难度-[高手]</a>
+<div id="ssss">已选择:</div>
+
+<div id="ranswer" style="display:none;">`(2x+1)(3x+19)`</div>  
+<style>body{font-size:3vh;}</style>
+<script>
+//    (2x+1)(3x+2)
+var userTotal = Number(localStorage.getItem("OSHUA_YSFJ_userTotal")) || 0;
+var userCorrect = Number(localStorage.getItem("OSHUA_YSFJ_userCorrect")) || 0;
+var botTotal = Number(localStorage.getItem("OSHUA_YSFJ_botTotal")) || 0;
+var botCorrect = Number(localStorage.getItem("OSHUA_YSFJ_botCorrect")) || 0;
+
+var thinking = "对手正在思考中......";
+var firstaa = 0;
+ var request =
+   {QueryString : function(val){
+   var uri = window.location.search;
+   var re = new RegExp("" +val+ "=([^&?]*)", "ig");
+   return ((uri.match(re))?(uri.match(re)[0].substr(val.length+1)):null);}}
+   
+function texxxt() {
+    
+localStorage.setItem("OSHUA_YSFJ_userTotal", userTotal);
+localStorage.setItem("OSHUA_YSFJ_userCorrect", userCorrect);
+localStorage.setItem("OSHUA_YSFJ_botTotal", botTotal);
+localStorage.setItem("OSHUA_YSFJ_botCorrect", botCorrect);
+document.getElementById("scorepanel").innerHTML = "我的得分:"+userCorrect+";对手得分:"+botCorrect+";"+thinking;
+}
+   
+   
+function fuhao(){if(Math.floor(Math.random()*2) == 1){return -1;}else{return 1;}}
+function start(){thinking = "对手正在思考中......";
+firstaa = new Date();
+texxxt();
+var a,b,c,d,z1,z2;
+var nandu = request.QueryString("difficulty");
+if(nandu == 1){z1=2;z2=6;document.getElementById("ssss").innerHTML = "已选择: 新手2";}
+if(nandu == 0){z1=1;z2=5;document.getElementById("ssss").innerHTML = "已选择: 新手";}
+else if(nandu == 3){z1=3;z2=30;document.getElementById("ssss").innerHTML = "已选择: 难手";}
+else if(nandu == 4){z1=5;z2=100;document.getElementById("ssss").innerHTML = "已选择: 高手";}
+else{z1=3;z2=15;document.getElementById("ssss").innerHTML = "已选择: 正常";}
+a = Math.floor(Math.random()*z1)+1;
+b = fuhao()*(Math.floor(Math.random()*z2)+1);
+c = Math.floor(Math.random()*z1)+1;
+d = fuhao()*(Math.floor(Math.random()*z2)+1);
+    var aa = a*c;
+    var ab = b*c+a*d;
+    var ac = b*d;
+   
+   if(a==1){a="";}if(c==1){c="";}if(aa==1){aa="";}if(ab==1){ab="";}
+   
+        var tm = aa+"x^{2}+"+ab+"x+"+ac;
+     var da = "("+a+"x"+"+"+b+")("+c+"x"+"+"+d+")";
+     
+   tm = tm.replace(/\+\-/g, "-");
+   da = da.replace(/\+\-/g, "-");
+document.getElementById("timu").innerHTML = "题目: `"+tm+"`";
+document.getElementById("ranswer").innerHTML = "答案: `"+da+"`";
+document.getElementById("k1").innerHTML = a;  
+document.getElementById("k2").innerHTML = b;  
+document.getElementById("k3").innerHTML = c;  
+document.getElementById("k4").innerHTML = d;  
+ userTotal++;botTotal++;
+hhh = setTimeout(function() {
+    if (Math.random() < 0.7) {thinking="对手答[对]了!";
+      //botCorrect++;
+      botCorrect = botCorrect + (30/(Math.floor(Math.random() * 5) + 7))*100;
+    } else {thinking="对手答[错]了!";
+    }
+  }, Math.floor(Math.random() * 5000) + 7000);
+
+}
+
+start();
+
+function submit(){
+var a,b,c,d;
+document.getElementById("ranswer").style.display="block";
+document.getElementById("aa2").style.display="block";
+document.getElementById("aa1").style.display="none";
+
+a = document.getElementById("k1").innerHTML;
+b = document.getElementById("k2").innerHTML;
+c = document.getElementById("k3").innerHTML;
+d = document.getElementById("k4").innerHTML;
+
+
+ if(Number(document.getElementById("a1").value)==1){document.getElementById("a1").value="";}if(Number(document.getElementById("a3").value)==1){document.getElementById("a3").value="";}
+ 
+ 
+if (Number(a) == Number(document.getElementById("a1").value) && Number(b) == Number(document.getElementById("a2").value) ) {
+    if(Number(c) == Number(document.getElementById("a3").value) && Number(d) == Number(document.getElementById("a4").value)){  
+        //userCorrect++;
+        userCorrect=Number(userCorrect) + (30/((new Date() - Number(firstaa) )/1000))*100;
+    clearTimeout(hhh);thinking="对手还没想出来呢~快点击下一题吧!";
+    alert("你答对了, 用时"+((new Date() - firstaa)/1000)+"s");}
+    else{
+    alert("你错了")}
+}
+else if(Number(c) == Number(document.getElementById("a1").value) && Number(d) == Number(document.getElementById("a2").value)){
+    if(Number(a) == Number(document.getElementById("a3").value) && Number(b) == Number(document.getElementById("a4").value)){
+        //userCorrect++;
+        userCorrect=Number(userCorrect) + (30/((new Date() - Number(firstaa) )/1000))*100;
+    alert("你答对了, 用时"+((new Date() - firstaa )/1000)+"s");}
+    else{
+    alert("你错了")
+    }
+}
+else{
+    alert("你错了")
+    }texxxt();
+}
+
+setInterval(function(){texxxt();},1666);
+
+
+
+/*
+
+test
+
+
+
+var a,b,c,d;
+a = Math.floor(Math.random()*3)+1;
+b = Math.floor(Math.random()*30)+1;
+c = Math.floor(Math.random()*3)+1;
+d = Math.floor(Math.random()*30)+1;
+
+function laiyigeyinshifenjie(a,b,c,d){
+    
+//texx(a,b,c,d,1,"timu");
+
+//texx(out);
+    var aa = a*c;
+    var ab = b*c+a*d;
+    var ac = b*d;
+    var tm = aa+"x^{2}+"+ab+"x+"+ac;
+    var da = "("+a+"x"+"+"+b+")("+c+"x"+"+"+d+")";
+document.getElementById("timu").innerHTML = "`"+tm+"`";
+    alert("("+a+"x"+"+"+b+")("+c+"x"+"+"+d+")"+" || "+aa+"x^2+"+ab+"x+"+""+ac);
+}
+
+function texx(a,b,c,d,mode,boxid){
+    var aa = a*c;
+    var ab = b*c+a*d;
+    var ac = b*d;
+        if(mode == 1){TeX= aa+"x^{2}+"+ab+"x+"+ac;}else if(mode == 2){TeX = "("+a+"x"+"+"+b+")("+c+"x"+"+"+d+")";}
+        var QUEUE = MathJax.Hub.queue;
+        var math;
+            QUEUE.Push(function () {
+                math = MathJax.Hub.getAllJax(boxid)[0];
+            });
+                //TeX = TeX.replace(/\$/g, "")
+                QUEUE.Push(
+                    ["resetEquationNumbers", MathJax.InputJax.TeX],
+                    ["Text", math, "\\displaystyle{" + TeX + "}"],
+                );}
+
+laiyigeyinshifenjie(a,b,c,d);*/
+</script>

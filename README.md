@@ -1,5 +1,6 @@
 # 新更新 
 刚才做了个英语词汇量测试网页版, 花了十几小时。见 ``wordstest.html`` .    
+还有因式分解二次三项式在线对战哦~见 ``YSFJ.html`` .   
 
 # OShuaLar Exercise Tool (english)
 You can do exercise online(offline, with service worker)!<br>
